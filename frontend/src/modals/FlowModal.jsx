@@ -56,7 +56,7 @@ const FlowModal = ({isDrawer, setIsDrawer, isViewModal, setIsViewFlowModal}) => 
             flow_type: 'manual'
         };
         axios
-            .post(`http://localhost:8000/create-flow`, data, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/create-flow`, data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -75,7 +75,7 @@ const FlowModal = ({isDrawer, setIsDrawer, isViewModal, setIsViewFlowModal}) => 
             flow_type: 'automatic'
         };
         axios
-            .post(`http://localhost:8000/create-flow`, data, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/create-flow`, data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

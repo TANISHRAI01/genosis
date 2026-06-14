@@ -99,7 +99,7 @@ const App = () => {
 
     // useEffect(() => {
     //     axios
-    //         .get(`http://localhost:8000/flows`)
+    //         .get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/flows`)
     //         .then((res) => {
     //             if (res.data.length > 0 && Array.isArray(res.data)) {
     //                 setFlowId(res.data.flow_id)

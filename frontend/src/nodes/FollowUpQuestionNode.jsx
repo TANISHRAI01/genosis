@@ -97,7 +97,7 @@ const FollowUpQuestionNode = ({ id, data }) => {
             'followUp'
         );
         axios
-            .post(`http://localhost:8000/${url}`, body, config)
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, config)
             .then((res) => setResponse(res.data))
             .catch((err) => manageErrors(err));
     };

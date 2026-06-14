@@ -131,7 +131,7 @@ const QuestionNode = ({ id, position, data  }) => {
             'question'
         );
         axios
-            .post(`http://localhost:8000/${url}`, body, config)
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, config)
             .then((res) => setResponse(res.data))
             .catch((err) => manageErrors(err));
         // 	const formData = new FormData();
@@ -142,7 +142,7 @@ const QuestionNode = ({ id, position, data  }) => {
         // 	}
         // 	console.log(dataString)
 
-        // 	axios.post("http://localhost:8000/sql-component-qa", dataString, {
+        // 	axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/sql-component-qa`, dataString, {
         // 		headers: {
         // 			// 'Content-Type': 'multipart/form-data'
         // 			'Content-Type': 'application/json'

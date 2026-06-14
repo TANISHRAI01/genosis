@@ -48,7 +48,7 @@ const Drawer = ({ isDrawer, setIsDrawer, flowList, setFlowList }) => {
             flow_json: ''
         };
         axios
-            .post(`http://localhost:8000/create-flow`, data, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/create-flow`, data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -93,7 +93,7 @@ const Drawer = ({ isDrawer, setIsDrawer, flowList, setFlowList }) => {
 
     const getFlowList = () => {
         axios
-            .get(`http://localhost:8000/flows`)
+            .get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/flows`)
             .then((res) => setFlowList(res.data))
             .catch((err) => manageErrors(err));
     };

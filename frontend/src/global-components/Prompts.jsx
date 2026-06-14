@@ -46,7 +46,7 @@ const Prompts = ({ agentName, activeAgent, setActiveAgent, id }) => {
         //     "flow_id": "6782c63b567b16ba8889cb71",
         //     "table_name": data.content
         // }
-        axios.post(`http://localhost:8000/${url}`, body, {
+        axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, {
             headers: {
                 'Content-Type': headerConfig
             }

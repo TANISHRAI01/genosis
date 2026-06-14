@@ -57,7 +57,7 @@ const PPTXModal = () => {
         pushNode(LoadingModal);
         const [url, body, headerConfig] = setRequestData('pptx', flowId, data);
         axios
-            .post(`http://localhost:8000/${url}`, body, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, {
                 headers: {
                     'Content-Type': headerConfig
                 }

@@ -52,7 +52,7 @@ const WEBModal = () => {
 		pushNode(LoadingModal);
 		const [url_hit, body, headerConfig] = setRequestData("web", flowId, data);
 		console.log("Testtttttt", url_hit, body, headerConfig)
-		axios.post(`http://localhost:8000/${url_hit}`, body, {
+		axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url_hit}`, body, {
 			headers: {
 				'Content-Type': headerConfig
 			}

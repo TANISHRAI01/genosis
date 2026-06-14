@@ -33,7 +33,7 @@ const DataSourceSet = ({ data }) => {
         };
         const [url, body, headerConfig] = setRequestData('pdf', flowId, data);
         axios
-            .post(`http://localhost:8000/${url}`, body, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, {
                 headers: {
                     'Content-Type': headerConfig
                 }

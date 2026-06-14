@@ -38,7 +38,7 @@ const CSVModal = () => {
 		}
 		pushNode(LoadingModal);
 		const [url, body, headerConfig] = setRequestData("csv", flowId, data);
-		axios.post(`http://localhost:8000/${url}`, body, {
+		axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, {
 			headers: {
 				'Content-Type': headerConfig
 			}

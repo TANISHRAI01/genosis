@@ -60,7 +60,7 @@ const videoAccept = 'video/*';
         pushNode(LoadingModal);
         const [url, body, headerConfig] = setRequestData('video', flowId, data);
         axios
-            .post(`http://localhost:8000/${url}`, body, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${url}`, body, {
                 headers: {
                     'Content-Type': headerConfig
                 }

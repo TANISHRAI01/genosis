@@ -37,7 +37,7 @@ const AskMultiple = ({ data, selectedNodes }) => {
             parent_node_ids: parentNodes
         };
         axios
-            .post('http://localhost:8000/multiple-qa-summarize', requestData, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/multiple-qa-summarize`, requestData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

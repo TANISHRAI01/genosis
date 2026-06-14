@@ -55,7 +55,7 @@ const FileUploader = ({ id, data, position }) => {
         formData.append("flow_id", "6773dca11fedc7239c286b2b")
         formData.append("file", file)
         console.log(file, "err")
-        axios.post("http://localhost:8000/component-create-pdf", formData, {
+        axios.post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/component-create-pdf`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

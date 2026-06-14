@@ -57,7 +57,7 @@ const Header = ({
         };
         console.log('JSON DATA', data);
         axios
-            .put(`http://localhost:8000/flow-update`, data, {
+            .put(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/flow-update`, data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -122,7 +122,7 @@ const Header = ({
             flow_id: flow_id
         };
         axios
-            .post(`http://localhost:8000/flow-summarizer`, data, {
+            .post(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/flow-summarizer`, data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -137,7 +137,7 @@ const Header = ({
 
     const getFlowList = () => {
         axios
-            .get(`http://localhost:8000/flows`)
+            .get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/flows`)
             .then((res) => {
                 pushNode(LoadingModal);
                 setFlowList(res.data);

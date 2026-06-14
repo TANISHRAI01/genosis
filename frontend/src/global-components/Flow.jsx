@@ -84,7 +84,7 @@ const Flow = ({ data, isDrawer, setIsDrawer, flows, setFlowList }) => {
             (ele) => ele.flow_id !== data.flow_id
         );
         axios
-            .delete(`http://localhost:8000/delete-flow/${data.flow_id}`)
+            .delete(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/delete-flow/${data.flow_id}`)
             .then((res) => {
                 setFlowList(updatedFlowss);
                 setIsDrawer(true);
